@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Bookings</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Bookings</h1>
+        <a href="/organizerHome">Back to Organizer Home</a>
+        <br>
+        <a href="/">Back to Home</a>    
+
+        <% booking.forEach(function(booking){ %>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h4 class="card-subtitle">Event: <%= booking.title %></h4>
+                    <div class="card-text mb-2">
+                        <br>
+                        <h7><strong>Attendee Name:</strong> </h7>
+                        <%= booking.attendee_name %>
+                        <br>
+                        <h7><strong>Full Price Tickets Purchased:</strong> </h7>
+                        <%= booking.ticket_amount_full %>
+                        <br>
+                        <h7><strong>Discount Price Tickets Purchased: </strong></h7>
+                        <%= booking.ticket_amount_discount %> <!-- Corrected this line -->
+                    </div>
+                    <div class="card-subtitle text-muted">
+                        <h6>booked at:</h6>
+                        <%= booking.purchase_time %> <!-- Assuming you have a proper format for this field -->
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
